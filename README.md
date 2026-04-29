@@ -21,8 +21,6 @@ To transform raw, messy data into a clean and structured dataset ready for analy
 
 ## 📂 Files Included
 - `Retail store sales dirty for cleaning.ipynb` → Full cleaning process
-- `raw_data.csv` → Original dataset (if added)
-- `cleaned_data.csv` → Final cleaned dataset (if added)
 
 ## 📊 Result
 A clean, consistent dataset ready for analysis and reporting.
