@@ -1,26 +1,32 @@
-# Retail Sales Data Cleaning Pipeline with Pandas
+# Retail Sales Data Cleaning Pipeline
 
-This project cleans a deliberately messy retail-sales dataset. The original notebook remains available for learning, and `src/clean_pipeline.py` provides a reusable command-independent function with a defined input/output contract.
+> A practical data-preparation project for standardizing categories, dates, missing values, duplicates, and types.
 
-## Setup
+![Status](https://img.shields.io/badge/status-educational-data-quality-project-blue)
+
+## What it does
+
+**Dirty CSV → profiling → standardization → validation → clean CSV**
+
+## Tech stack
+
+`Python · Pandas · Jupyter Notebook · CSV`
+
+## Quick start
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
 pip install -r requirements.txt
+python -c "from src.clean_pipeline import clean_sales; clean_sales('data/raw_sales.csv', 'data/clean_sales.csv')"
 ```
 
-## Reusable pipeline
+## Project layout
 
-The input CSV must contain `city`, `sales`, and `date` columns. The pipeline standardizes city names, parses dates, converts sales to numeric values, imputes missing sales with the column mean, removes duplicate rows, validates required columns, and writes a clean CSV.
+The repository keeps the implementation, configuration, and supporting assets close to the workflow so the project is easy to inspect and reproduce. See the source folders and files for the detailed implementation.
 
-```python
-from src.clean_pipeline import clean_sales
-clean_sales('data/raw_sales.csv', 'data/clean_sales.csv')
-```
+## Important notes
 
-The command prints before/after row counts. Mean imputation is a teaching choice, not a universal business rule; replace it with a domain-approved strategy when the data is used beyond the exercise.
+**Status:** Educational data-quality project. Use sample or synthetic data only unless the project documentation explicitly states otherwise. Review the limitations and security notes before any deployment or real-world use.
 
-## Notebook and limitations
+## License
 
-Run `Retail store sales dirty for cleaning.ipynb` for the guided walkthrough. The repository does not claim production-grade schema governance, orchestration, or monitoring; add Pandera/Great Expectations checks, structured logging, and a real data-quality report before production use.
+See the repository license file when present. Contributions and improvements should keep the existing attribution and project history clear.
